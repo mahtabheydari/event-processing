@@ -1,5 +1,6 @@
 # Event Processing
 A Python toolkit for processing neuromorphic event imager data and generating frame reconstructions, visualizations, and videos.
+This idea was adapted from Gothard et al. More technical details can be found in their [2022 paper](https://doi.org/10.1088/2634-4386/ac4917)
 
 ## Table of Contents
 - [Installation](#installation)
