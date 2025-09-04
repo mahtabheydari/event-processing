@@ -51,7 +51,7 @@ video_fps = 50 #fps of exported video
 visualize_exposure_video_log(frames, output_video_path, video_fps, frequency, period_fraction)
 ```
 
-### 5. **Examples / Demo**
+### **Examples / Demo**
 Resulting video from run_DCE. Event data collected on 3 blinking LEDS at varying frequencies (50 Hz, 31 Hz, 87 Hz)
 Frames processed at 200 fps, 100% Exposure. Video saved at 50 fps
 <img width="1918" height="962" alt="event frame" src="https://github.com/user-attachments/assets/329906e2-5216-40d1-bb97-7d7ef89e2047" />
@@ -64,29 +64,41 @@ Resulting 3D plot from visualize_events.py on blinking LED data.
 <img width="1200" height="600" alt="Figure_1" src="https://github.com/user-attachments/assets/daf8c71a-eaa6-4d20-9e7a-0354e87030c5" />
 <img width="1200" height="600" alt="Figure_2" src="https://github.com/user-attachments/assets/e8684ff3-e9b0-41c4-a033-5dbcf639466d" />
 
-## Project Structure
-Main scripts: 
-run_DCE.py
-	Used to unpack .aedat4 event data and store it as an array.
-  Performs digital coded exposure of events.
-visualize_events.py 
-	Used to unpack .aedat4 event data and store it as an array.
-	Plot 3D events. Set the probability (p) to filter out events to speed up computation (all events are not needed for visualization). Center the plot at x_center, y_center, zoomed in from zoom_range. Set n_points 
-  set how many points to visualize in plot
-	--> In order to have pop up 3D plot that you can rotate/zoom in (see figures above), run visualize_events.py script directly from the command prompt
+## 📂 Project Structure
 
-Helper Function: 
-RAW EVENTS
-	aedat4.py 
- 		aedat4_unpack: this function unpacks all events from .aedat4 file
-	  aedat4_unpack_positiveonly: this function unpacks only the positive events from .aedat4 file. This is often sufficient and reduces computation
+### 🔹 Main Scripts
+- **`run_DCE.py`**  
+  - Unpacks `.aedat4` event data and stores it as a NumPy array.  
+  - Performs **digital coded exposure (DCE)** on the events.  
 
-	plot_rawevents.py
-  	plot_events_3D_zoomed: plots 3D events
+- **`visualize_events.py`**  
+  - Unpacks `.aedat4` event data and stores it as an array.  
+  - Plots **3D event clouds** with adjustable parameters:  
+    - `p`: probability to filter events (reduce computation, not all events are needed).  
+    - `x_center, y_center`: center coordinates of zoomed region.  
+    - `zoom_range`: window size around the center.  
+    - `n_points`: number of events to visualize.  
+  - 👉 To view an **interactive 3D plot** (rotatable and zoomable), run this script directly from the **command prompt**.
 
- CONSTRUCT FRAMES
- 		exposure.py: this contains all the functions associated with digital coded exposure. 
-	  processed_visualization: contains all functions associated with exposure visualization. can call these if you want to visualize in different ways (images vs video, log scale vs normal scale, etc.)
+---
 
- 
+### 🔹 Helper Functions
+
+#### 📌 Raw Events
+- **`aedat4.py`**
+  - `aedat4_unpack`: Unpack **all events** from `.aedat4` file.  
+  - `aedat4_unpack_positiveonly`: Unpack **only positive events** (often sufficient and reduces computation).  
+
+- **`plot_rawevents.py`**
+  - `plot_events_3D_zoomed`: Plot **3D event clouds** with zoom and filtering options.  
+
+#### 📌 Construct Frames
+- **`exposure.py`**  
+  - Contains functions for **digital coded exposure** (DCE).  
+
+- **`processed_visualization.py`**  
+  - Functions for visualizing exposure results in multiple ways:  
+    - Images vs. Video.  
+    - Log scale vs. Normal scale.  
+
 
