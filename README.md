@@ -6,8 +6,7 @@ A Python toolkit for processing neuromorphic event imager data and generating fr
 - [Usage](#usage)
 - [Examples](#examples)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+
 
   ## Installation
 This was implemented on python 3.13.7
