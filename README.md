@@ -65,9 +65,9 @@ Resulting 3D plot from visualize_events.py on blinking LED data.
 <img width="1200" height="600" alt="Figure_1" src="https://github.com/user-attachments/assets/daf8c71a-eaa6-4d20-9e7a-0354e87030c5" />
 <img width="1200" height="600" alt="Figure_2" src="https://github.com/user-attachments/assets/e8684ff3-e9b0-41c4-a033-5dbcf639466d" />
 
-## 📂 Project Structure
+##  Project Structure
 
-### 🔹 Main Scripts
+###  Main Scripts
 - **`run_DCE.py`**  
   - Unpacks `.aedat4` event data and stores it as a NumPy array.  
   - Performs **digital coded exposure (DCE)** on the events.  
@@ -79,13 +79,13 @@ Resulting 3D plot from visualize_events.py on blinking LED data.
     - `x_center, y_center`: center coordinates of zoomed region.  
     - `zoom_range`: window size around the center.  
     - `n_points`: number of events to visualize.  
-  - 👉 To view an **interactive 3D plot** (rotatable and zoomable), run this script directly from the **command prompt**.
+  -  To view an **interactive 3D plot** (rotatable and zoomable), run this script directly from the **command prompt**.
 
 ---
 
-### 🔹 Helper Functions
+###  Helper Functions
 
-#### 📌 Raw Events
+#### Raw Events
 - **`aedat4.py`**
   - `aedat4_unpack`: Unpack **all events** from `.aedat4` file.  
   - `aedat4_unpack_positiveonly`: Unpack **only positive events** (often sufficient and reduces computation).  
@@ -93,7 +93,7 @@ Resulting 3D plot from visualize_events.py on blinking LED data.
 - **`plot_rawevents.py`**
   - `plot_events_3D_zoomed`: Plot **3D event clouds** with zoom and filtering options.  
 
-#### 📌 Construct Frames
+#### Construct Frames
 - **`exposure.py`**  
   - Contains functions for **digital coded exposure** (DCE).  
 
